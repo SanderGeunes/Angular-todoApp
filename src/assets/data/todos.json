@@ -1,16 +1,19 @@
-{"todos":   
-  [
-        {
-            "id":1,
-            "title":"create app",
-            "status": false
-        },
-        {
-            "id":2,
-            "title":"make app better",
-            "status": false
-        }
-
-
-    ]
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "create app",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "make app better",
+      "status": false
+    },
+    {
+      "id": 3,
+      "title": "make app even better",
+      "status": false
+    }
+  ]
 }
