@@ -1,5 +1,5 @@
 <br>
-<div class="container">
+<div class="container" style="text-align: center;">
     <div class="row">
         <div class="col">
             <input class="inputField" type="text" placeholder="Add Item"> 
@@ -15,9 +15,9 @@
     <div class="row">
         <div class="col">
             <div id="itemsOpen">
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card text-white bg-dark mb-3">
                     <div class="card-body" *ngFor="let todo of todos">
-                      <p class="card-text">{{todo.title}}</p>
+                      <p class="card-text mt-2 itemBox">{{todo.title}}</p>
                     </div>
                 </div>
             </div>

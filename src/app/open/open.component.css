@@ -1,3 +1,9 @@
 .inputField{
     margin: 5px;
 }
+
+.itemBox{
+    text-align: center;
+    margin: 5px;
+    border-color: black;
+}
