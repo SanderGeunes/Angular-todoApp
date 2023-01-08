@@ -7,7 +7,14 @@
     </div>
     <div class="row">
         <div class="col">
-            <div id="itemsDone"> 
+            <div id="itemsDone">
+                <div *ngFor="let todo of todos">   
+                    <!--ID of #box can be set with data binding-->
+                  <div class="itemBox" #box id="{{todo.id}}">
+                    <span> {{todo.title}} </span>
+                    <button class="btn btn-danger resetButton" (click)="resetTodo(box.id)">⟲</button>
+                  </div>
+                </div>  
             </div>
         </div>
     </div>

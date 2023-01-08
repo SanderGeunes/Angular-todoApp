@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../shared/models/todo.model';
 import { TodosService } from '../todos.service';
 
 
@@ -10,9 +9,22 @@ import { TodosService } from '../todos.service';
 })
 export class DoneComponent implements OnInit {
   todos:any;
+  data:any;
   constructor(private todosService: TodosService) {} 
   ngOnInit() {
-    //this.todos = this.todosService.getTodos();
+    this.render();
+  }
+  render(){
+    this.data = this.todosService.getTodos();
+    this.todos = this.data.filter(item =>item.status === true);
     
   }
+
+
+  resetTodo(x){
+    let id= x
+    this.todosService.resetTodo(id)
+    this.render();
+  }
+
 }

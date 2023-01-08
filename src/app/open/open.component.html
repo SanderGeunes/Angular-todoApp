@@ -2,8 +2,8 @@
 <div class="container" style="text-align: center;">
     <div class="row">
         <div class="col">
-            <input class="inputField" type="text" placeholder="Add Item"> 
-            <button class="btn btn-secondary" type="submit">Add item</button>
+            <input class="inputField" #input type="text" placeholder="Add Item"> 
+            <button class="btn btn-secondary" type="submit"(click)="addTodo(input.value)">Add item</button>
         </div>
     </div>
     <br>
@@ -15,11 +15,13 @@
     <div class="row">
         <div class="col">
             <div id="itemsOpen">
-                <div class="card text-white bg-dark mb-3">
-                    <div class="card-body" *ngFor="let todo of todos">
-                      <p class="card-text mt-2 itemBox">{{todo.title}}</p>
+                 <div *ngFor="let todo of todos">   
+                    <div class="itemBox" #box id="{{todo.id}}">
+                        <input type="checkbox" class="checkbox1" (click)="updateTodo(box.id)"> 
+                        <span>   {{todo.title}}   </span>
+                        <button type="button" (click)="deleteTodo(box.id)" class="btn1 btn-close btn-close-white" aria-label="Close"></button>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>
