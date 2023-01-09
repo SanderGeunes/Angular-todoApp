@@ -9,14 +9,12 @@ import { TodosService } from '../todos.service';
 })
 export class DoneComponent implements OnInit {
   todos:any;
-  data:any;
   constructor(private todosService: TodosService) {} 
   ngOnInit() {
     this.render();
   }
   render(){
-    this.data = this.todosService.getTodos();
-    this.todos = this.data.filter(item =>item.status === true);
+    this.todos = this.todosService.getTodos().filter(item =>item.status === true);
     
   }
 

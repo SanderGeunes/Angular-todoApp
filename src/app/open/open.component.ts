@@ -10,16 +10,13 @@ import { TodosService } from '../todos.service';
 })
 export class OpenComponent implements OnInit {
   todos:any;
-  data: any;
   constructor(private todosService: TodosService) {} 
   ngOnInit() {
     this.render()
   }
   
-  render(){
-    this.data = this.todosService.getTodos();
-    this.todos = this.data.filter(item =>item.status === false);
-    console.log(this.todos);
+  async render(){
+    this.todos = await this.todosService.getTodos().filter(item =>item.status === false);
   }
 
 

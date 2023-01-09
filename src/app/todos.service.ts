@@ -9,22 +9,18 @@ export class TodosService {
   constructor() { }
   url = "http://localhost:3000/todos"
   data;
+
+
   
-  
-  
-  fetchTodos(){
+
+  getTodos(){
     fetch(this.url).then(res=>res.json()).then(data=>{
       // the last item should be first on the display
         let x = data.reverse()
+        console.log(x);
         this.data = x
       }).catch(err=>console.log(err))
-      
-  }
- 
-
-  getTodos(){
-    this.fetchTodos();
-    return this.data
+      return this.data;
   }
   
   addTodo = (obj) => {
