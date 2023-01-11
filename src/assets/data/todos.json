@@ -17,12 +17,12 @@
     },
     {
       "title": "drink",
-      "status": false,
+      "status": true,
       "id": 19
     },
     {
       "title": "finish app",
-      "status": false,
+      "status": true,
       "id": 20
     },
     {

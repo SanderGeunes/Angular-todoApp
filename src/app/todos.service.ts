@@ -14,13 +14,7 @@ export class TodosService {
   
 
   getTodos(){
-    fetch(this.url).then(res=>res.json()).then(data=>{
-      // the last item should be first on the display
-        let x = data.reverse()
-        console.log(x);
-        this.data = x
-      }).catch(err=>console.log(err))
-      return this.data;
+    return fetch(this.url).then(res=>res.json())
   }
   
   addTodo = (obj) => {
@@ -30,13 +24,13 @@ export class TodosService {
         body: JSON.stringify(obj)
     }).then(
         res => res.json()
-    ).then(this.getTodos()).catch(err=>console.log(err));
+    ).then().catch(err=>console.log(err));
   }
   
   deleteTodo(id:number) {
     fetch(this.url + '/' + id, {
         method: 'DELETE'
-    }).then(res => res.json()).then(this.getTodos()).catch(err=>console.log(err));
+    }).then(res => res.json()).then().catch(err=>console.log(err));
   } 
   updateTodo(id:number){
     fetch(this.url + '/' + id, {
@@ -47,7 +41,7 @@ export class TodosService {
       body: JSON.stringify({
           status: true
       })
-  }).then(res => res.json()).then(this.getTodos()).catch(err=>console.log(err));
+  }).then(res => res.json()).then().catch(err=>console.log(err));
   }
   
   resetTodo(id:number){
@@ -59,7 +53,7 @@ export class TodosService {
       body: JSON.stringify({
           status: false
       })
-  }).then(res => res.json()).then(this.getTodos()).catch(err=>console.log(err));
+  }).then(res => res.json()).then().catch(err=>console.log(err));
   }
 
 }

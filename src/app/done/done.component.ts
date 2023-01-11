@@ -13,9 +13,9 @@ export class DoneComponent implements OnInit {
   ngOnInit() {
     this.render();
   }
+
   render(){
-    this.todos = this.todosService.getTodos().filter(item =>item.status === true);
-    
+    this.todosService.getTodos().then(res=> this.todos = res.reverse().filter(item =>item.status === true));
   }
 
 

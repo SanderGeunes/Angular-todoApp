@@ -15,8 +15,8 @@ export class OpenComponent implements OnInit {
     this.render()
   }
   
-  async render(){
-    this.todos = await this.todosService.getTodos().filter(item =>item.status === false);
+  render(){
+    this.todosService.getTodos().then(res=> this.todos = res.reverse().filter(item =>item.status === false));
   }
 
 
